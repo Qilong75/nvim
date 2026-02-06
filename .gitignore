@@ -1,0 +1,15 @@
+# OpenCode
+opencode.json
+
+# Neovim
+.netrwhist
+spell/
+
+# Lazy.nvim lock file (可选，如需版本锁定可移除此行)
+# lazy-lock.json
+
+# OS
+.DS_Store
+
+# Logs
+*.log
