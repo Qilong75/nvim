@@ -57,6 +57,12 @@ return {
       n = {
         -- second key is the lefthand side of the map
 
+        -- NOTE: 自定义格式化当前文档快捷键添加在这里（<Leader>lf）
+        ["<Leader>lf"] = {
+          function() vim.lsp.buf.format() end,
+          desc = "Format buffer",
+        },
+
         -- navigate buffer tabs
         ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
@@ -77,6 +83,24 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+      },
+    },
+    autocmds = {
+      -- NOTE: 保存时提示（当缓冲区支持 LSP 格式化时提示）
+      format_on_save_notice = {
+        {
+          event = "BufWritePost",
+          desc = "Notify on format on save",
+          callback = function(args)
+            local clients = vim.lsp.get_clients { bufnr = args.buf }
+            for _, client in ipairs(clients) do
+              if client.supports_method("textDocument/formatting") then
+                vim.notify("已保存并格式化当前文档", vim.log.levels.INFO)
+                break
+              end
+            end
+          end,
+        },
       },
     },
   },
