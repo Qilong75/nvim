@@ -12,7 +12,7 @@
 ├── lua/
 │   ├── lazy_setup.lua    # lazy.nvim 配置和插件加载顺序
 │   ├── community.lua     # AstroCommunity 社区插件导入
-│   ├── polish.lua        # 最后执行的自定义 Lua 代码（当前禁用）
+│   ├── polish.lua        # 最后执行的自定义 Lua 代码
 │   └── plugins/          # 用户插件配置
 │       ├── astrocore.lua # AstroNvim 核心配置
 │       ├── astrolsp.lua  # LSP 配置
@@ -145,6 +145,12 @@ Mason 确保安装的工具：
 - 绝对行号: 启用
 - 自动换行: 禁用
 - 拼写检查: 禁用
+
+### 外部修改自动刷新
+- `autoread`: 启用
+- `updatetime`: 500ms（<= 1s 内检测外部改动）
+- 自动触发 `:checktime` 的事件: `FocusGained` / `BufEnter` / `CursorHold` / `CursorHoldI`
+- 外部修改检测到后会通知：`已检测到外部修改并重载`
 
 ## 开发规范
 
