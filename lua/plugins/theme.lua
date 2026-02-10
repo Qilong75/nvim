@@ -1,9 +1,9 @@
--- Matrix 主题
+-- Ayu 主题
 return {
-  "luisiacc/the-matrix.nvim",
+  "Shatur/neovim-ayu",
   lazy = false,
   priority = 1000,
   config = function()
-    vim.cmd.colorscheme "thematrix"
+    vim.cmd.colorscheme "ayu"
   end,
 }
