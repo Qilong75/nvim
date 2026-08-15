@@ -94,7 +94,7 @@ return {
           callback = function(args)
             local clients = vim.lsp.get_clients { bufnr = args.buf }
             for _, client in ipairs(clients) do
-              if client.supports_method("textDocument/formatting") then
+              if require("astrolsp.utils").supports_method(client, "textDocument/formatting", args.buf) then
                 vim.notify("已保存并格式化当前文档", vim.log.levels.INFO)
                 break
               end
