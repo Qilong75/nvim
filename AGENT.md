@@ -45,8 +45,13 @@ require("lazy").setup({
   
   -- 第三优先级：用户插件
   { import = "plugins" },
+
+  -- Neovim 0.12-compatible Treesitter spec overrides AstroNvim's default.
+  { import = "plugins.treesitter" },
 })
 ```
+
+插件不启用 AstroNvim 的全局 pin；需要兼容性分支的插件由本地规格显式指定版本分支。
 
 ### 3. 禁用的默认插件
 
@@ -93,12 +98,18 @@ require("lazy").setup({
 
 | 插件 | 说明 |
 |------|------|
-| `nvim-treesitter/nvim-treesitter` | 语法高亮和代码解析 |
+| `nvim-treesitter/nvim-treesitter` | 语法高亮和代码解析（Neovim 0.12 使用 `main` 分支） |
 | `nvimtools/none-ls.nvim` | 格式化和诊断 |
 
-Treesitter 确保安装的解析器：
+Treesitter 启用高亮的语言：
 - `lua`
 - `vim`
+- `go`
+- `gomod`
+- `gosum`
+- `gowork`
+
+解析器通过 `:TSInstall` 和 `:TSUpdate` 管理。
 
 ### AstroCommunity 语言包 (community.lua)
 
