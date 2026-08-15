@@ -87,6 +87,7 @@ require("lazy").setup({
 |------|------|----------|
 | `andweeb/presence.nvim` | Discord Rich Presence | 默认 |
 | `ray-x/lsp_signature.nvim` | 函数签名提示 | `BufRead` |
+| `stevearc/aerial.nvim` | 代码大纲侧边栏（符号树） | 默认 |
 | `folke/snacks.nvim` | Dashboard 自定义 | 默认 |
 | `L3MON4D3/LuaSnip` | 代码片段引擎 | 默认 |
 | `windwp/nvim-autopairs` | 自动括号配对 | 默认 |
@@ -182,6 +183,7 @@ Mason 确保安装的工具：
 - 使用 `<Leader>` 作为主要前缀键（空格）
 - 保持键位映射的一致性和可记忆性
 - 在配置中添加描述，方便 which-key 显示
+- `<Leader>o`: 切换代码大纲侧边栏（Aerial）
 
 ## 常用命令
 

@@ -12,6 +12,21 @@ return {
     event = "BufRead",
     config = function() require("lsp_signature").setup() end,
   },
+  {
+    "stevearc/aerial.nvim",
+    opts = {
+      layout = {
+        min_width = 28,
+      },
+    },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons",
+    },
+    keys = {
+      { "<leader>o", "<cmd>AerialToggle!<CR>", desc = "Outline" },
+    },
+  },
 
   -- == Examples of Overriding Plugins ==
 
