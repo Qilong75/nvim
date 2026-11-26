@@ -100,6 +100,7 @@ require("lazy").setup({
 | 插件 | 说明 |
 |------|------|
 | `nvim-treesitter/nvim-treesitter` | 语法高亮和代码解析（Neovim 0.12 使用 `main` 分支） |
+| `nvim-treesitter/nvim-treesitter-textobjects` | 跟随 Tree-sitter 使用 `main` 分支，匹配新版接口 |
 | `nvimtools/none-ls.nvim` | 格式化和诊断 |
 
 Treesitter 启用高亮的语言：
